@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class SqlConnection {
     public static void main(String[] args){
@@ -13,8 +10,8 @@ public class SqlConnection {
             int res=pre.executeUpdate();
             if(res==0)
             System.out.println("table is created :"+res);
-        }catch (Exception r){
-            r.printStackTrace();
+        }catch (ClassNotFoundException | SQLException e ){
+            e.printStackTrace();
         }
     }
 }
